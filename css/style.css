@@ -1,0 +1,149 @@
+:root{
+  --background-color: #F4EBD0;
+  --font-color: #122620;
+  --principal-color:#D6AD60;
+  --secundary-color: #B68D40;
+}
+
+@keyframes MudaCor {
+  25%{
+    background: var(--background-color);
+  }
+  50%{
+    background: var(--secundary-color);
+  }
+  75%{
+    background: var(--background-color);
+  }
+  100%{
+    background: var(--secundary-color);
+  }
+}
+
+.title {
+  margin-top: 16px;
+}
+
+.principal {
+  color: var(--font-color);
+  display: flex;
+  background: linear-gradient(to bottom, var(--background-color), var(--principal-color));
+  min-height: 100vh;
+  min-width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Madimi One';
+}
+
+.subtitle {
+  visibility: hidden;
+  text-align: justify;
+  text-wrap: wrap;
+  margin:  8px auto;
+  transition: 1s;
+}
+
+.btnLink{
+  align-items: center;
+  background: var(--font-color);
+  border-radius: 8px;
+  color: var(--principal-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  height: 80px;
+  margin: 16px  auto;
+  justify-content: center;
+  text-decoration: none;
+  width: 250px;
+}
+
+.btnLink:hover {
+  border: solid 4px var(--font-color);
+  background: transparent;
+  color: var(--font-color);
+  height: calc(80px - 8px);
+  width: calc(250px - 8px);
+}
+
+.video {
+   border-radius: 8px;
+   margin: 16px 0;
+}
+.description{
+  margin: 0 16px;
+  text-align: justify;
+}
+.videoLink {
+  width: 350px;
+}
+.videos{
+  display: flex;
+  justify-content: center;
+  gap:16px;
+}
+.videoLink{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 16px;
+  background: transparent;
+  border-radius: 16px;
+  transition: 1s;
+}
+.videoLink:hover{
+  animation: MudaCor 5s infinite;
+}
+
+.videoLink:hover > .subtitle{
+  visibility: visible;
+}
+
+@media screen and (min-width: 0) {
+  .subtitle {
+    font-size: 1rem;
+  }
+  .description{
+    font-size: 1rem;
+  }
+  .video{
+    height: 180px;
+    width: 320px;
+  }
+  .videos{
+    flex-direction: column;
+  }
+  .videoLink > a > img{
+    border-radius: 8px;
+    width: 320px;
+  }
+  .title{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .description{
+    font-size: 1.5rem;
+  }
+  .video{
+    height: 315px;
+    width: 560px;
+  }
+  .videos{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .videoLink > a > img{
+    border-radius: 8px;
+    width: 320px;
+  }
+  .title{
+    font-size: 2rem;
+  }
+}
